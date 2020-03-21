@@ -1,0 +1,12 @@
+.bgstars {
+  background-image: url(https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80);
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+}
+
+.moon {
+  background-image: url(https://www.skepticalraptor.com/blog/wp-content/uploads/2014/07/moon-cheese-231x240.jpg);
+  background-repeat: no-repeat;
+  height: 35vh;
+}
