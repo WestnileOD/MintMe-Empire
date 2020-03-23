@@ -10,40 +10,80 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <div class="container-fluid bgstars">
+<body class="bgstars">
+  <div class="container-fluid ">
     <div class="row">
       <div class="col-12 text-light text-center"><h1>MOON MINER</h1></div>
     </div>
     <div class="row my-5 py-5">
+
+
     <!-- column with left side card in it -->
-      <div class="col-4 text-light"> 
+      <div class="col-md-3 text-light"> 
         <div class="card bg-light text-dark w-100" style="width: 18rem;">
-          <div class="card-header">
+          <div class="card-header h5">
             INVENTORY
           </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">CHEESE: <span id="cheeseQTY"></span></li>
-            <li class="list-group-item">Pickaxes: <span id="axeQTY"></span>
-              <button onclick="buyAxe()" type="button" class="btn btn-outline-success">BUY</button>
+          <ul class="list-group list-group-flush ">
+            <li class="list-group-item bg-warning"><strong>Total Cheese:</strong> <span id="cheeseQTY"></span></li>
+            <li class="list-group-item bg-warning"><strong>Total Resources:</strong> <span id="multiplierQTY"></span>
+              <p><strong>Total Multiplied Efficiency:</strong> <span id="multiplierIntensity"></span></p>
             </li>
-            <li class="list-group-item">Shovels: <span id="shovelQTY"></span></li>
-            <li class="list-group-item">Rovers: <span id="roverQTY"></span></li>
-            <li class="list-group-item">Moustronauts: <span id="miceQTY"></span></li>
           </ul>
         </div>
       </div>
+
+
       <!-- column with moon in it -->
-      <div class="col-3 moon">
-        <button onclick="mine()" type="button" class="btn btn-outline-secondary btn-lg btn-block h-100 w-100">mine</button>
+      <div class="col-md-2 moon">
+        <button onclick="mine()" type="button" class="btn btn-outline-none btn-lg btn-block h-100 w-100"></button>
       </div>
-      <!-- column with right side card in it -->
-      <div class="col-5 text-light">larger box?</div>
+
+      <!-- column with inventory, on right -->
+      <div class="col-md-3 text-light"> 
+      <div class="card bg-light text-dark w-100" style="width: 18rem;">
+        <div class="card-header h5">
+          RESOURCES
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item bg-warning"><strong>Pickaxes:</strong> <span id="axeQTY"></span>
+          </li>
+          <li class="list-group-item bg-warning"><strong>Shovels:</strong> <span id="shovelQTY"></span>
+          </li>
+          <li class="list-group-item bg-warning"><strong>Rovers:</strong> <span id="roverQTY"></span></li>
+          <li class="list-group-item bg-warning"><strong>Moustronauts:</strong> <span id="miceQTY"></span></li>
+        </ul>
+      </div>
+      </div>
+
+      <!-- column with far right side card in it -->
+      <div class="col-md-4 text-light">
+        <div class="card bg-light text-dark w-100" style="width: 18rem;">
+          <div class="card-header h5">
+            STORE
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item bg-warning">
+              <button onclick="buyAxe()" type="button" class="btn btn-outline-success">BUY</button>
+              <strong>Pickaxes</strong> cost <span id="axePrice"></span> cheese
+            </li>
+            <li class="list-group-item bg-warning">
+              <button onclick="buyShovel()" type="button" class="btn btn-outline-success">BUY</button>
+              <strong>Shovels</strong> cost <span id="shovelPrice"></span> cheese
+            </li>
+            <li class="list-group-item bg-warning"><button onclick="buyRover()" type="button" class="btn btn-outline-success">BUY</button>
+              <strong>Rovers</strong> cost <span id="roverPrice"></span> cheese
+            </li>
+            <li class="list-group-item bg-warning"><button onclick="buyMouse()" type="button" class="btn btn-outline-success">BUY</button>
+              <strong>Moustronauts</strong> cost <span id="mousePrice"></span> cheese
+            </li>
+          </ul>
+        </div>
+
+      </div>
 
     </div>
   </div>
-
-
 
 
 
