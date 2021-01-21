@@ -1,90 +1,333 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Ashley's Moon Miner</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+  <title>Age of Mintpires</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
-<body class="bgstars">
-  <div class="container-fluid ">
+<body>
+<script>
+
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+
+<header>
+  <div>
     <div class="row">
-      <div class="col-12 text-light text-center"><h1>MOON MINER</h1></div>
+      <div class="col-12 text-light text-center"><h1>MintMe Empire</h1></div>
     </div>
-    <div class="row my-5 py-5">
-
-
-    <!-- column with left side card in it -->
-      <div class="col-md-3 text-light"> 
-        <div class="card bg-light text-dark w-100" style="width: 18rem;">
-          <div class="card-header h5">
-            INVENTORY
-          </div>
-          <ul class="list-group list-group-flush ">
-            <li class="list-group-item bg-warning"><strong>Total Cheese:</strong> <span id="cheeseQTY"></span></li>
-            <li class="list-group-item bg-warning"><strong>Total Resources:</strong> <span id="multiplierQTY"></span>
-              <p><strong>Total Multiplied Efficiency:</strong> <span id="multiplierIntensity"></span></p>
-            </li>
+ </header>
+ <div class="sticky">
+          <ul>
+            <li class="list-group-item bg-warning"><i class="material-icons">spa</i><strong>Food:</strong> <span id="cheeseQTY"></span></li>
+		   <li class="list-group-item bg-warning"><i class="material-icons">wrap_text</i><strong>Gold:</strong> <span id="axeQTY"></span> </li>
+           <li class="list-group-item bg-warning"><i class="material-icons">storage</i><strong>Wood:</strong> <span id="woodQTY"></span> </li>
+			<li class="list-group-item bg-warning"><i class="material-icons">landscape</i><strong>Stone:</strong> <span id="stoneQTY"></span> </li>
+		 <li class="list-group-item bg-warning"><i class="material-icons">polymer</i><strong>Diamond:</strong> <span id="diamondQTY"></span></li>
+         <li class="list-group-item bg-warning"><i class="material-icons">monetization_on</i><strong>MintMe:</strong> <span id="mintmeQTY"></span></li>
+       
           </ul>
-        </div>
-      </div>
-
-
-      <!-- column with moon in it -->
-      <div class="col-md-2 moon">
-        <button onclick="mine()" type="button" class="btn btn-outline-none btn-lg btn-block h-100 w-100"></button>
-      </div>
-
-      <!-- column with inventory, on right -->
-      <div class="col-md-3 text-light"> 
-      <div class="card bg-light text-dark w-100" style="width: 18rem;">
-        <div class="card-header h5">
-          RESOURCES
-        </div>
+        </div>  
+  <img src="img/newtribe.jpg" id='cityview' height="400px">
+ <!-- population stats -->
+   <div class="col-3">
+        <div style="position:fixed">
+          
+    
         <ul class="list-group list-group-flush">
-          <li class="list-group-item bg-warning"><strong>Pickaxes:</strong> <span id="axeQTY"></span>
-          </li>
-          <li class="list-group-item bg-warning"><strong>Shovels:</strong> <span id="shovelQTY"></span>
-          </li>
-          <li class="list-group-item bg-warning"><strong>Rovers:</strong> <span id="roverQTY"></span></li>
-          <li class="list-group-item bg-warning"><strong>Moustronauts:</strong> <span id="miceQTY"></span></li>
-        </ul>
+		<li class="list-group-item bg-warning"><i class="material-icons">wc</i><strong>Total Population:</strong> <span id="multiplierQTY"></span>
+			<p><strong>Loyalty:</strong> <span id="loyaltyQTY"></span></p>
+              <p><strong>Food Production:</strong> <span id="multiplierIntensity"></span></p>
+			  <p><strong>Lumber Production:</strong> <span id="woodIntensity"></span></p>
+			  <p><strong>Stone Production:</strong> <span id=""></span></p></li>
+		  <li class="list-group-item bg-warning"><strong>Civilians:</strong> <span id="civQTY"></span></li>
+          <li class="list-group-item bg-warning"><strong>Hunters:</strong> <span id="roverQTY"></span></li>
+          <li class="list-group-item bg-warning"><strong>Farmers:</strong> <span id="miceQTY"></span></li>
+		  <li class="list-group-item bg-warning"><strong>Lumberjacks:</strong> <span id="jacksQTY"></span></li>
+		  <li class="list-group-item bg-warning"><strong>Stone Miners:</strong> <span id="stonersQTY"></span></li>
+		  <li class="list-group-item bg-warning"><strong>Gold Miners:</strong> <span id=""></span></li>
+		  <li class="list-group-item bg-warning"><strong>Blacksmiths:</strong> <span id=""></span></li>
+         </ul>
+		 <div>
+	  <h4> <strong>Soldiers:</strong> <span id="shovelQTY"></span></h4>
+	  <h4> <strong>Calvary:</strong> <span id=""></span></h4>
+	 </div>
+		 </div>
+		 
+</div> 
+
+    
+     
+    
+     
+      <div class="col-6 menu" id="grad">
+	  <h1> Orders:<h1>
+	  <div>
+        <button onclick="mine()" type="button" style="font-size:90px" width="50%">Hunt</button>
       </div>
+	  <li class="list-group-item bg-warning">
+              <strong>Civilian</strong> cost <span id="civPrice"></span> Food
+			<button onclick="crCIV()" type="button" class="btn btn-outline-success">Create Civilian</button>
+        </li>
+	  <div>
+        <button onclick="battle()" type="button" style="font-size:30px">Local Police Guard</button>
       </div>
+	  <div id="grad">
+	  <h1>Train Civilians</h1>
+	  </div>
+	  <div>
+	  <li class="list-group-item bg-warning">
+              <strong>Soldier</strong> cost <span id="shovelPrice"></span> Food
+			  <button onclick="buyShovel()" type="button" class="btn btn-outline-success">Create</button>
+       </li>
+	   <li class="list-group-item bg-warning">
+              <strong>25 Soldiers</strong> cost <span id="shovelPrice10"></span> Food
+			  <button onclick="buyShovel10()" type="button" class="btn btn-outline-success">Create</button>
+       </li>
+            <li class="list-group-item bg-warning">
+              <strong>Hunter</strong> cost <span id="roverPrice"></span> Food
+			<button onclick="civCheck(choice.x.y = 1)" type="button" class="btn btn-outline-success">Create</button>
+        </li>
+            <li class="list-group-item bg-warning">
+           <strong>Farmer</strong> cost <span id="mousePrice"></span> food
+		   <button onclick="buyMouse(choice.x.y = 2)" type="button" class="btn btn-outline-success">Create</button>
+         </li>
+			<li class="list-group-item bg-warning">
+              <strong>Lumberjack</strong> cost <span id="jacksPrice"></span> food
+             <button onclick="buyJack(choice.x.y = 3)" type="button" class="btn btn-outline-success">Create</button>
+
+            </li>
+	  <li class="list-group-item bg-warning">
+              <strong>Stone Miner</strong> cost <span id="stonersPrice"></span> food
+             <button onclick="buyStoner()" type="button" class="btn btn-outline-success">Create</button>
+
+            </li>
+			<li class="list-group-item bg-warning">
+              <strong>Blacksmith</strong> cost <span id=""></span> food
+             <button onclick="" type="button" class="btn btn-outline-success">Create</button>
+
+            </li>
+	  </div>
+	  <div id="grad">
+	  <h1>Create Buildings</h1>
+	  </div>
+	  Building Houses will cause people to move into your country and populate.
+	  Building a Castle will make people secure, and they will pay taxes.
+	  <li class="list-group-item bg-warning">
+              <strong>Build Houses</strong> cost 3 Wood
+             <button onclick="buildHouse()" type="button" class="btn btn-outline-success">Create</button>
+	  </li>
+	  <li class="list-group-item bg-warning">
+              <strong>Build Castle</strong> cost 50 Stone
+             <button onclick="buildCastle()" type="button" class="btn btn-outline-success">Create</button>
+	  </li>
+	 
+     ADSPACe
 
       <!-- column with far right side card in it -->
-      <div class="col-md-4 text-light">
-        <div class="card bg-light text-dark w-100" style="width: 18rem;">
-          <div class="card-header h5">
-            STORE
-          </div>
+	
+      
+	
+          <div id="grad">
+            <h1>Trade</h1>
+			</div>
+       <div> 
           <ul class="list-group list-group-flush">
             <li class="list-group-item bg-warning">
-              <button onclick="buyAxe()" type="button" class="btn btn-outline-success">BUY</button>
-              <strong>Pickaxes</strong> cost <span id="axePrice"></span> cheese
+              <button onclick="buyAxe()" type="button" class="btn btn-outline-success">Trade Food/Gold</button>
+              Trade <strong><span id="axePrice"></span> Food</strong> for <strong>100 Gold</strong>
             </li>
-            <li class="list-group-item bg-warning">
-              <button onclick="buyShovel()" type="button" class="btn btn-outline-success">BUY</button>
-              <strong>Shovels</strong> cost <span id="shovelPrice"></span> cheese
+			<li class="list-group-item bg-warning">
+              <button onclick="sellWood()" type="button" class="btn btn-outline-success">Trade Wood/Gold</button>
+              Trade <strong><span id="woodPrice"></span> Wood</strong> for <strong>100 Gold</strong>
             </li>
-            <li class="list-group-item bg-warning"><button onclick="buyRover()" type="button" class="btn btn-outline-success">BUY</button>
-              <strong>Rovers</strong> cost <span id="roverPrice"></span> cheese
+			<li class="list-group-item bg-warning">
+              <button onclick="sellStone()" type="button" class="btn btn-outline-success">Trade Stone/Gold</button>
+              Trade <strong><span id="stonePrice"></span> Stone</strong> for <strong>1000 Gold</strong>
             </li>
-            <li class="list-group-item bg-warning"><button onclick="buyMouse()" type="button" class="btn btn-outline-success">BUY</button>
-              <strong>Moustronauts</strong> cost <span id="mousePrice"></span> cheese
+			<li class="list-group-item bg-warning">
+              <button onclick="buyDiamond()" type="button" class="btn btn-outline-success">Buy Diamond</button>
+			  <button onclick="sellDiamond()" type="button" class="btn btn-outline-success">Sell Diamond</button>
+              <strong><span id="diamondPrice"></span> Gold</strong> for <strong>1 Diamond</strong>
+			</li>
+			<li class="list-group-item bg-warning">
+              <button onclick="buyMintme()" type="button" class="btn btn-outline-success">Trade Gold/MintMe</button>
+              Trade <strong><span id="mintmePrice"></span> Gold</strong> for <strong>0.00000001 MintMe</strong>
             </li>
+			<li class="list-group-item bg-warning">
+              <button onclick="buyMintme100()" type="button" class="btn btn-outline-success">Trade Gold/MintMe</button>
+              Trade <strong><span id="100mintmePrice"></span> Gold</strong> for <strong>0.000001 MintMe</strong>
+            </li>
+			<li class="list-group-item bg-warning">
+              <button onclick="buyMintme10k()" type="button" class="btn btn-outline-success">Trade Gold/MintMe</button>
+              Trade <strong><span id="10kmintmePrice"></span> Gold</strong> for <strong>0.0001 MintMe</strong>
+            </li>
+			<li class="list-group-item bg-warning">
+              <button onclick="buyMintme1M()" type="button" class="btn btn-outline-success">Trade Gold/MintMe</button>
+              Trade <strong><span id="1MmintmePrice"></span> Gold</strong> for <strong>0.01 MintMe</strong>
+            </li>
+            
+			
           </ul>
-        </div>
+     </div>
+	 
+	 
+	 <div>
+	 
+	 <div id="grad">
+	  <h1>Raids:</h1>
+	  </div>
+	  	  Attempting raids on other nations will gain Gold, but you will lose loyalty from your people.
 
+	  </div>
+	  <hr>
+	  ADSPACE
+	  <hr>
+
+	  <div id="grad">
+	  <h2>Barbarian Encampments</h2>
+	  <p>
+	   Army size: 10
+	   Skills: 25%
+	   Available Gold: 25,000 </p>
+        <button onclick="battle2()" type="button" style="font-size:40px" width="90%">Raid Barbarian Encampments</button>
       </div>
+	  	  <img src="https://i.imgur.com/f8Mcx53.jpg" alt="barbarians" width="100%" height="100%">
+<hr>
+	  <div  id="grad">
+	  <h2>Tibet</h2>
+	  <p>
+	   Army size: 20
+	   Skills: 100%
+	   Available Gold: 500,000 </p>
+        <button onclick="battle3()" type="button"style="font-size:40px" width="90%">Raid Tibetan Temples</button>
+      </div>
+	  
+	  <img src="https://i.imgur.com/FDOhNUT.jpg" alt="tibet" width="100%" height="50%">
+<hr> 
+	  <div id="grad">
+	  <h2>Hyskos</h2>
+	  <p>
+	   Army size: 30
+	   Skills: 10%
+	   Available Gold: 30,000 </p>
+        <button onclick="battle4()" type="button" style="font-size:40px" width="90%">Raid Hyskos</button>
+      </div>
+	  
+	  <img src="https://i.imgur.com/wfSp958.jpeg" alt="hyskos" width="100%" height="50%">
+<hr> 	  
+	   <div id="grad">
+	  <h2>Zulu Nation</h2>
+	  <p>
+	   Army size: 30
+	   Skills: 80%
+	   Available Gold: 30,000 </p>
+        <button onclick="battle5()" type="button" style="font-size:40px" width="90%">Raid Zulu Nation</button>
+      </div>
+ 
+	  <img src="https://i.imgur.com/CKZvK9F.jpg" alt="zulu" width="100%" height="50%">
+<hr> 	  
+	  <div id="grad">
+	  <h2>Kiev</h2>
+	  <p>
+	   Army size: 100
+	   Skills: 50%
+	   Available Gold: 80,000 </p>
+        <button onclick="battle6()" type="button" style="font-size:40px" width="90%">Raid Kiev</button>
+      </div>
+	  
+	  <img src="https://i.imgur.com/2DtB7rU.jpg" alt="kiev" width="100%" height="50%">
+<hr>	  
+	  
+	  	  <div id="grad">
+	  <h2>Ethiopia</h2>
+	  <p>
+	   Army size: 100
+	   Skills: 80%
+	   Available Gold: 2,000,000 </p>
+        <button onclick="battle7()" type="button" style="font-size:40px" width="90%">Raid Ethiopia</button>
+      </div>
+	  
+	  <img src="https://i.imgur.com/IUIIHsp.jpg" alt="eth" width="100%" height="50%">
+<hr>	  
+	  	  <div id="grad">
+	  <h2>Mongolia</h2>
+	  <p>
+	   Army size: 200
+	   Skills: 30%
+	   Available Gold: 80,000 </p>
+        <button onclick="battle8()" type="button" style="font-size:40px" width="90%">Raid Mongolia</button>
+      </div>
+	  
+	  <img src="https://i.imgur.com/t3ZQo.jpeg" alt="eth" width="100%" height="50%">
+<hr>	  
+	  	  <div id="grad">
+	  <h2>Macedonia</h2>
+	  <p>
+	   Army size: 225
+	   Skills: 50%
+	   Available Gold: 100,000 </p>
+        <button onclick="battle9()" type="button" style="font-size:40px" width="90%">Raid Macedonia</button>
+      </div>
+	  
+	  <img src="https://i.imgur.com/3jPdoYD.jpeg" alt="eth" width="100%" height="50%">
+<hr>  
+	  	  <div id="grad">
+	  <h2>Sparta</h2>
+	  <p>
+	   Army size: 300
+	   Skills: 100%+
+	   Available Gold: 850,000 </p>
+        <button onclick="battle10()" type="button" style="font-size:40px" width="90%">Raid Sparta</button>
+      </div>
+	  
+	  <img src="https://i.imgur.com/l941cIhb.jpg" alt="eth" width="100%" height="50%">
+<hr>	  
+	  	  <div id="grad">
+	  <h2>Egypt</h2>
+	  <p>
+	   Army size: 500
+	   Skills: 70%
+	   Available Gold: 40,000,000 </p>
+        <button onclick="battle11()" type="button" style="font-size:40px" width="90%">Raid Egypt</button>
+      </div>
+	  
+	  <img src="https://i.imgur.com/bLB9POA.png" alt="eth" width="100%" height="50%">
+<hr>
+	  <div id="grad">
+	   <h2>Han</h2>
+	   <p>
+	   Army size: 1100
+	   Skills: 30%
+	   Available Gold: 5,000,000 </p>
+        <button onclick="battle12()" type="button" style="font-size:40px" width="90%">Raid Han Dynasty</button>
+      </div>
+	  
+	  <img src="https://i.imgur.com/e4KxTy9.jpg" alt="eth" width="100%" height="50%">
+<hr>
+<hr>
+<hr>  
+	  
+</div>	  
+	  
+	 
 
-    </div>
-  </div>
-
+	 
 
 
 
@@ -93,9 +336,9 @@
 
 <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

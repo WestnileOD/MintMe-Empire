@@ -1,12 +1,119 @@
-.bgstars {
-  background-image: url(https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80);
-   background-size: contain;
-   background-position: center;
 
+body {
+	background-color: #008ae6;
 }
 
-.moon {
-  background-image: url(https://www.skepticalraptor.com/blog/wp-content/uploads/2014/07/moon-cheese-231x240.jpg);
-  background-repeat: no-repeat;
-  height: 35vh;
+h1,h2,h3,h4,p {
+    color: whitesmoke;
 }
+* {
+  box-sizing: border-box;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 5px;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+html {
+  font-family: "Lucida Sans", sans-serif;
+}
+
+header {
+  text-align: center;
+  background-color: black;
+  color: white;
+  padding: 25px;
+  height: 150px;
+  font-size: 30px;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  padding: 18px;
+  margin-bottom: 7px;
+  background-color: blue;
+  color: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.menu li:hover {
+  background-color: #0099cc;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 200;
+  overflow: hidden;
+  background-color: black;
+  padding-top: 10px;
+}
+
+.sticky li {
+	float: center;
+	 display: inline;
+  color: white;
+  text-align: center;
+  padding: 24px 16px;
+  text-decoration: bold;
+}
+
+button {
+  display: inline-block;
+  padding: 5px 5px;
+  font-size: 28px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: black;
+  border: solid, black;
+  border-radius: 19px;
+  box-shadow: 0 5px #999;
+}
+
+button:hover {background-color: lightblue}
+
+button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#grad {
+  background-image: linear-gradient(black, darkblue, black);
+}
+
+hr {
+  border: 40px solid black;
+  border-radius: 15px;
+}
+
+
