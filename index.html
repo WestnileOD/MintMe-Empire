@@ -52,20 +52,21 @@ function myFunction() {
         <ul class="list-group list-group-flush">
 		<li class="list-group-item bg-warning"><i class="material-icons">wc</i><strong>Total Population:</strong> <span id="multiplierQTY"></span>
 			<p><strong>Loyalty:</strong> <span id="loyaltyQTY"></span></p>
-              <p><strong>Food Production:</strong> <span id="multiplierIntensity"></span></p>
-			  <p><strong>Lumber Production:</strong> <span id="woodIntensity"></span></p>
-			  <p><strong>Stone Production:</strong> <span id=""></span></p></li>
+              
 		  <li class="list-group-item bg-warning"><strong>Civilians:</strong> <span id="civQTY"></span></li>
           <li class="list-group-item bg-warning"><strong>Hunters:</strong> <span id="roverQTY"></span></li>
           <li class="list-group-item bg-warning"><strong>Farmers:</strong> <span id="miceQTY"></span></li>
 		  <li class="list-group-item bg-warning"><strong>Lumberjacks:</strong> <span id="jacksQTY"></span></li>
 		  <li class="list-group-item bg-warning"><strong>Stone Miners:</strong> <span id="stonersQTY"></span></li>
-		  <li class="list-group-item bg-warning"><strong>Gold Miners:</strong> <span id=""></span></li>
-		  <li class="list-group-item bg-warning"><strong>Blacksmiths:</strong> <span id=""></span></li>
+		  <li class="list-group-item bg-warning"><strong>Gold Miners:</strong> <span id="goldersQTY"></span></li>
+		  <li class="list-group-item bg-warning"><strong>Diamond Miners:</strong> <span id="diamonersQTY"></span></li>
+		  <li class="list-group-item bg-warning"><strong>Mintme Miners:</strong> <span id="mintersQTY"></span></li>
+		  <li class="list-group-item bg-warning"><strong>Blacksmiths:</strong> <span id="smithsQTY"></span></li>
          </ul>
 		 <div>
-	  <h4> <strong>Soldiers:</strong> <span id="shovelQTY"></span></h4>
-	  <h4> <strong>Calvary:</strong> <span id=""></span></h4>
+	  <h3> <strong>Soldiers:</strong> <span id="shovelQTY"></span></h3>
+	  <h3> <strong>Calvalry:</strong> <span id="cavQTY"></span></h3>
+	  <h3> <strong>Equipment Strength:</strong> <span id="defenseQTY"></span></h3>
 	 </div>
 		 </div>
 		 
@@ -91,6 +92,45 @@ function myFunction() {
 	  <h1>Train Civilians</h1>
 	  </div>
 	  <div>
+	  
+            <li class="list-group-item bg-warning">
+              <strong>Hunter</strong> cost <span id="roverPrice"></span> Food
+			<button onclick="civCheck(choice.x.y = 1)" type="button" class="btn btn-outline-success">Create</button>
+        </li>
+            <li class="list-group-item bg-warning">
+           <strong>Farmer</strong> cost <span id="mousePrice"></span> food
+		   <button onclick="civCheck(choice.x.y = 2)" type="button" class="btn btn-outline-success">Create</button>
+         </li>
+			<li class="list-group-item bg-warning">
+              <strong>Lumberjack</strong> cost <span id="jacksPrice"></span> food
+             <button onclick="civCheck(choice.x.y = 3)" type="button" class="btn btn-outline-success">Create</button>
+
+            </li>
+	    <li class="list-group-item bg-warning">
+              <strong>Stone Miner</strong> cost <span id="stonersPrice"></span> food
+             <button onclick="civCheck(choice.x.y = 4)" type="button" class="btn btn-outline-success">Create</button>
+        <li class="list-group-item bg-warning">
+              <strong>Gold Miner</strong> cost <span id="goldersPrice"></span> food
+             <button onclick="civCheck(choice.x.y = 5)" type="button" class="btn btn-outline-success">Create</button>
+            </li>
+			<li class="list-group-item bg-warning">
+              <strong>Diamond Miner</strong> cost <span id="diamonersPrice"></span> food
+             <button onclick="civCheck(choice.x.y = 7)" type="button" class="btn btn-outline-success">Create</button>
+            </li>
+			<li class="list-group-item bg-warning">
+              <strong>Blacksmith</strong> cost <span id="smithsPrice"></span> food
+             <button onclick="civCheck(choice.x.y = 6)" type="button" class="btn btn-outline-success">Create</button>
+
+            </li>
+			<li class="list-group-item bg-warning">
+              <strong>Mintme Miners</strong> cost <span id="mintersPrice"></span> food
+             <button onclick="civCheck(choice.x.y = 8)" type="button" class="btn btn-outline-success">Create</button>
+
+            </li>
+	  </div>
+	  <div id="grad">
+	  <h1>Train Soldiers</h1>
+	  </div>
 	  <li class="list-group-item bg-warning">
               <strong>Soldier</strong> cost <span id="shovelPrice"></span> Food
 			  <button onclick="buyShovel()" type="button" class="btn btn-outline-success">Create</button>
@@ -99,38 +139,24 @@ function myFunction() {
               <strong>25 Soldiers</strong> cost <span id="shovelPrice10"></span> Food
 			  <button onclick="buyShovel10()" type="button" class="btn btn-outline-success">Create</button>
        </li>
-            <li class="list-group-item bg-warning">
-              <strong>Hunter</strong> cost <span id="roverPrice"></span> Food
-			<button onclick="civCheck(choice.x.y = 1)" type="button" class="btn btn-outline-success">Create</button>
-        </li>
-            <li class="list-group-item bg-warning">
-           <strong>Farmer</strong> cost <span id="mousePrice"></span> food
-		   <button onclick="buyMouse(choice.x.y = 2)" type="button" class="btn btn-outline-success">Create</button>
-         </li>
-			<li class="list-group-item bg-warning">
-              <strong>Lumberjack</strong> cost <span id="jacksPrice"></span> food
-             <button onclick="buyJack(choice.x.y = 3)" type="button" class="btn btn-outline-success">Create</button>
-
-            </li>
-	  <li class="list-group-item bg-warning">
-              <strong>Stone Miner</strong> cost <span id="stonersPrice"></span> food
-             <button onclick="buyStoner()" type="button" class="btn btn-outline-success">Create</button>
-
-            </li>
-			<li class="list-group-item bg-warning">
-              <strong>Blacksmith</strong> cost <span id=""></span> food
-             <button onclick="" type="button" class="btn btn-outline-success">Create</button>
-
-            </li>
-	  </div>
+	   <li class="list-group-item bg-warning">
+              <strong>100 Soldiers</strong> cost <span id="shovelPrice20"></span> Food
+			  <button onclick="buyShovel20()" type="button" class="btn btn-outline-success">Create</button>
+       </li>
 	  <div id="grad">
 	  <h1>Create Buildings</h1>
 	  </div>
-	  Building Houses will cause people to move into your country and populate.
-	  Building a Castle will make people secure, and they will pay taxes.
+	   Houses - will cause people to move into your country and populate.
+	   Stable - will raise horses that can create calvalry
+	   Castle - will make people secure, and they will pay taxes.
+	   
 	  <li class="list-group-item bg-warning">
               <strong>Build Houses</strong> cost 3 Wood
              <button onclick="buildHouse()" type="button" class="btn btn-outline-success">Create</button>
+	  </li>
+	   <li class="list-group-item bg-warning">
+              <strong>Build Stable</strong> cost 15 Wood
+             <button onclick="buildStable()" type="button" class="btn btn-outline-success">Create</button>
 	  </li>
 	  <li class="list-group-item bg-warning">
               <strong>Build Castle</strong> cost 50 Stone
@@ -165,7 +191,15 @@ function myFunction() {
 			  <button onclick="sellDiamond()" type="button" class="btn btn-outline-success">Sell Diamond</button>
               <strong><span id="diamondPrice"></span> Gold</strong> for <strong>1 Diamond</strong>
 			</li>
-			<li class="list-group-item bg-warning">
+			
+            
+			
+          </ul>
+     </div>
+	 <div id="grad">
+            <h1>MintMe</h1>
+			</div>
+	  <li class="list-group-item bg-warning">
               <button onclick="buyMintme()" type="button" class="btn btn-outline-success">Trade Gold/MintMe</button>
               Trade <strong><span id="mintmePrice"></span> Gold</strong> for <strong>0.00000001 MintMe</strong>
             </li>
@@ -181,12 +215,10 @@ function myFunction() {
               <button onclick="buyMintme1M()" type="button" class="btn btn-outline-success">Trade Gold/MintMe</button>
               Trade <strong><span id="1MmintmePrice"></span> Gold</strong> for <strong>0.01 MintMe</strong>
             </li>
-            
-			
-          </ul>
-     </div>
-	 
-	 
+			<li class="list-group-item bg-warning">
+              <button onclick="buyMintmeFull()" type="button" class="btn btn-outline-success">Trade Gold/MintMe</button>
+              Trade <strong><span id="FullMmintmePrice"></span> Gold</strong> for <strong>1.0 MintMe</strong>
+            </li>
 	 <div>
 	 
 	 <div id="grad">
